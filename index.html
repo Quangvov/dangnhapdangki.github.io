@@ -1,0 +1,41 @@
+<form>
+  <label for="username">Tên đăng nhập:</label>
+  <input type="text" id="username" name="username" required><br><br>
+  <label for="password">Mật khẩu:</label>
+  <input type="password" id="password" name="password" required><br><br>
+  <input type="submit" value="Đăng nhập">
+</form>
+<form>
+  <label for="name">Tên:</label>
+  <input type="text" id="name" name="name" required><br><br>
+  <label for="email">Địa chỉ email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+  <label for="password">Mật khẩu:</label>
+  <input type="password" id="password" name="password" required><br><br>
+  <input type="submit" value="Đăng kí">
+</form>
+<input type="text" id="messageInput">
+<button onclick="sendMessage()">Gửi</button>
+
+<script>
+function sendMessage() {
+  var message = document.getElementById("messageInput").value;
+  // Gửi tin nhắn đến người nhận
+}
+</script>
+<video id="localVideo" autoplay></video>
+<video id="remoteVideo" autoplay></video>
+
+<script>
+var localVideo = document.getElementById("localVideo");
+var remoteVideo = document.getElementById("remoteVideo");
+
+navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then(function(stream) {
+    localVideo.srcObject = stream;
+    // Hiển thị video của người gọi
+  })
+  .catch(function(error) {
+    console.log("Không thể truy cập camera và microphone: " + error);
+  });
+</script>
